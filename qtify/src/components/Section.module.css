@@ -1,0 +1,12 @@
+.title{
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: poppins;
+}
+.gridContainer{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 3 equal-width columns */
+    grid-gap: 10px; /* Space between grid items */
+    padding: 10px;
+}

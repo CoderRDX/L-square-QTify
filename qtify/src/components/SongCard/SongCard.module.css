@@ -1,0 +1,28 @@
+.card {
+    height: 232px;
+    width: 159px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.chip{
+    color: white;
+    padding: 4px 8px 4px 8px;
+
+}
+.tname{
+    font-size: 10px;
+    font-weight: 400;
+    font-family: poppins;
+    line-height: 15px;
+    /* color: white; */
+}
+.inside{
+    /* border-radius: 20px; */
+    background-color: white;
+    border-radius: 10px;
+}
+.outer{
+    /* background-color: black; */
+}
