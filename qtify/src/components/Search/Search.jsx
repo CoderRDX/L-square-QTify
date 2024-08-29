@@ -61,27 +61,28 @@ function Search({ searchData, placeholder }) {
   };
 
   return (
-    <div style={{ position: "relative" }}>
+    <div style={{ position: "relative" }} >
       <form
         className={styles.wrapper}
         onSubmit={(e) => {
           onSubmit(e, value);
         }}
-      >
+      > 
         <div {...getRootProps()}>
-          <input
-            name="album"
-            className={styles.search}
-            placeholder={placeholder}
-            required
-            {...getInputProps()}
-          />
-        </div>
-        <div>
-          <button className={styles.searchButton} type="submit">
-            <SearchIcon />
-          </button>
-        </div>
+            <input
+              name="album"
+              className={styles.search}
+              placeholder={placeholder}
+              required
+              {...getInputProps()}
+            />
+          </div>
+          <div>
+            <button className={styles.searchButton} type="submit">
+              <SearchIcon />
+            </button>
+          </div>
+
       </form>
       {groupedOptions.length > 0 ? (
         <Listbox {...getListboxProps()}>

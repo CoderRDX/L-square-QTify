@@ -2,7 +2,13 @@
     background-color: black;
     font-family: poppins;
     color: #34C94B;
-    border-radius: 0.5rem;
+    border-radius: 12px;
     float: right;
+    height: 47px;
+    width: 170px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+
   
 }
