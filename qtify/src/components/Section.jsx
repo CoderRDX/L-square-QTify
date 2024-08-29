@@ -6,15 +6,17 @@ import axios from "axios";
 import SongCard from "./SongCard/SongCard";
 // import { Button } from "@mui/material";
 import Button from "./Button/Button";
+import Carousel from "./Carousel/Carousel";
 
 
 
 
-export default function Section(){
+export default function Section({api, albumName}){
 
     const [songs, setSongs] = useState([]);
     const [filteredSongs, setFilteredSongs] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [showAll, setShowAll] = useState(false);
 
   
     useEffect(() => {
@@ -24,10 +26,14 @@ export default function Section(){
         onLoadHandler();
        }, []);
 
+    const handleToggle = () => {
+        setShowAll(!showAll); 
+      };
+
 
     const performAPICall = async () => {
         try{
-         const res = await axios.get(`https://qtify-backend-labs.crio.do/albums/top`);
+         const res = await axios.get(api);
          setSongs(res.data);
          setFilteredSongs(res.data);
          setIsLoading(false);
@@ -47,9 +53,12 @@ export default function Section(){
       
        };
     return(
+      <>
+        <span className={styles.title}>{albumName}</span>
+        <Button className={styles.btn2} label={showAll ? "Collapse" :"Show all"} onClick={handleToggle}/>
+        {showAll ? 
         <div className={styles.section}>
-        <span className={styles.title}>Top Album</span>
-        <Button className={styles.btn2} label={"Show all"}/>
+        
         <div className={styles.gridContainer}>
         { filteredSongs.length ? (
                   filteredSongs.map((album) => (
@@ -64,7 +73,11 @@ export default function Section(){
                   </div>)}
         </div>
 
-        </div>
+      </div>
+       :( <Carousel album={api}/>)}
+      </>
+    
+     
     );
 }
 
