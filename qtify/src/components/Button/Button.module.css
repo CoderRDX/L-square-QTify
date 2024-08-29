@@ -1,6 +1,5 @@
 .btn{
     background-color: black;
-    font-family: poppins;
     color: #34C94B;
     border-radius: 12px;
     float: right;
@@ -9,6 +8,7 @@
     font-size: 18px;
     font-weight: 600;
     cursor: pointer;
+    font-family: poppins;
 
   
 }
