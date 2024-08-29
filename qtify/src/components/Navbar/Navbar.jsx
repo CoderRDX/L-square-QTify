@@ -7,6 +7,7 @@ import styles from "./Navbar.module.css";
 
 function Navbar({ searchData }) {
   return (
+    <>
     <nav className={styles.navbar}>
       <Link to="/">
         <Logo />
@@ -17,6 +18,7 @@ function Navbar({ searchData }) {
       />
       <Button label="Give Feedback"/>
     </nav>
+    </>
   );
 }
 

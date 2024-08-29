@@ -16,10 +16,7 @@ export default function Section(){
     const [filteredSongs, setFilteredSongs] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
-    // const { enqueueSnackbar } = useSnackbar();
-
-
-
+  
     useEffect(() => {
         const onLoadHandler= async ()=>{
           const songsdata = await performAPICall(); 
@@ -39,16 +36,10 @@ export default function Section(){
         }catch(error){
          setIsLoading(false);
          if(error.response && error.response === 500){
-        //    enqueueSnackbar(error.response.data.message, {variant: "error"});
+     
         console.error('There was an error making the POST request!', error);
          }else{
-        //    enqueueSnackbar("Something went wrong. Check that the backend is running, reachable, and returns valid JSON.", {
-        //      variant: "error",
-        //      anchorOrigin: {
-        //        vertical: "bottom",
-        //        horizontal: "center"
-        //      }
-        //    });  
+     
         console.error('There was an error making the POST request!', error);
          }
          return null;
@@ -56,36 +47,20 @@ export default function Section(){
       
        };
     return(
-        <div>
+        <div className={styles.section}>
         <span className={styles.title}>Top Album</span>
-        <Button label={"show all"}/>
+        <Button className={styles.btn2} label={"Show all"}/>
         <div className={styles.gridContainer}>
         { filteredSongs.length ? (
                   filteredSongs.map((album) => (
                     <div class="grid-item">
                         <SongCard image={album.image} follows={album.follows} albumName={album.title}/>
                     </div>
-                    // <Grid item xs={6} md={3} key={product._id}>
-                    //   <SongCard product={product} handleAddToCart={async () => {
-                    //     console.log(items);
-                    //     await addToCart(
-                    //       token,
-                    //       items,
-                    //       products,
-                    //       product._id,
-                    //       1,
-                    //       {
-                    //         preventDuplicate: true,
-                    //       }
-                    //     )
-                    //   }}/>
-                    // </Grid>  
+        
                   ))
                 )
                 :(<div className="loading">
-                  {/* <SentimentDissatisfied color = "action" />
-                  <h4 style={{color:"#63636"}}>No products found</h4> */}
-                  console.log(Naachoo!);
+                  console.log("check the code!");
                   </div>)}
         </div>
 
