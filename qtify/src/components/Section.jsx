@@ -53,7 +53,7 @@ export default function Section({api, albumName}){
       
        };
     return(
-      <>
+      <div >
         <span className={styles.title}>{albumName}</span>
         <Button className={styles.btn2} label={showAll ? "Collapse" :"Show all"} onClick={handleToggle}/>
         {showAll ? 
@@ -75,7 +75,7 @@ export default function Section({api, albumName}){
 
       </div>
        :( <Carousel album={api}/>)}
-      </>
+      </div>
     
      
     );
